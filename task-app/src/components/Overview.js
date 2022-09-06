@@ -1,15 +1,15 @@
 import React from "react";
 
-function Overview() {
+const Overview = (props) => {
+  const { tasks } = props;
+
   return (
-    <form>
-      <label>
-        Task:
-        <input type="text" name="task" />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+    <ul>
+      {tasks.map((task) => {
+        return <li key={task.id}>{task.text}</li>;
+      })}
+    </ul>
   );
-}
+};
 
 export default Overview;
